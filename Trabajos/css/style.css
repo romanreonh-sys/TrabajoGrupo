@@ -1,0 +1,197 @@
+/* Importar tipografía Inter para textos y Oswald para títulos (estilo eSports) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 16px;
+    /* Colores base oscuros típicos del competitivo */
+    color: #ECE8E1; 
+    background-color: #0F1923; 
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    /* Añadimos un patrón sutil de fondo si lo deseas, o lo dejamos liso */
+    background: radial-gradient(circle at center, #1A242D 0%, #0F1923 100%);
+}
+
+/* Contenedor principal estilo tarjeta táctica */
+.container {
+    background-color: #141E27; /* Fondo de la caja un poco más claro que el body */
+    padding: 40px;
+    /* Borde superior rojo brillante para llamar la atención */
+    border-top: 4px solid #FF4655; 
+    border-left: 1px solid #2B3A47;
+    border-right: 1px solid #2B3A47;
+    border-bottom: 1px solid #2B3A47;
+    /* Sin bordes redondeados para el toque agresivo/esports */
+    border-radius: 0; 
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.text-center { text-align: center; }
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: #ECE8E1;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #8B97A3; /* Grisáceo para no competir con los inputs */
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 12px;
+    color: #8B97A3;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+/* Inputs con fondo transparente e integrados */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    background-color: rgba(15, 25, 35, 0.6);
+    border: 1px solid #2B3A47;
+    border-radius: 0;
+    font-size: 0.95rem;
+    color: #ECE8E1;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto al seleccionar: cambia al rojo icónico */
+input:focus {
+    border-color: #FF4655;
+    outline: none;
+    box-shadow: inset 2px 0 0 0 #FF4655; /* Línea interna en lugar de sombra exterior */
+}
+
+.input-wrapper input:focus + i,
+.input-wrapper input:focus ~ i {
+    color: #FF4655;
+}
+
+/* Botón principal estilo D1 */
+button {
+    width: 100%;
+    padding: 0.85rem;
+    background-color: #FF4655; /* Rojo competitivo */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover { 
+    background-color: #E23D4B; 
+}
+
+button:active { 
+    transform: scale(0.98); 
+}
+
+/* Botón secundario transparente */
+.btn-outline {
+    background-color: transparent;
+    color: #ECE8E1;
+    border: 1px solid #2B3A47;
+    margin-top: 1rem;
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #ECE8E1;
+}
+
+.enlace-login {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: #8B97A3;
+    text-align: center;
+}
+
+a {
+    color: #FF4655;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+a:hover { 
+    color: #FFFFFF; 
+    text-decoration: none; 
+}
+
+/* Alertas adaptadas al Dark Mode */
+.alert {
+    padding: 0.75rem 1rem;
+    border-radius: 0;
+    margin-bottom: 1.25rem;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    border-left: 3px solid;
+}
+
+.alert-error {
+    background-color: rgba(255, 70, 85, 0.1);
+    border-color: #FF4655;
+    color: #FF4655;
+}
+
+.alert-success {
+    background-color: rgba(0, 255, 170, 0.1);
+    border-color: #00FFAA;
+    color: #00FFAA;
+}
